@@ -35,10 +35,11 @@ Data Type |       Description       | Default  |  Size
 
 ### Java
 
-- [Oracle Docs - Array](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
-- [TutorialsPoint - Array](https://www.tutorialspoint.com/java/java_arrays.htm)
-- [Oracle Docs - ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
-- [TutorialsPoint - ArrayList](https://www.tutorialspoint.com/java/java_arraylist_class.htm)
+- **`Array`:** [Oracle Docs](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html), [TutorialsPoint](https://www.tutorialspoint.com/java/java_arrays.htm).
+- **`ArrayList`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), [TutorialsPoint](https://www.tutorialspoint.com/java/java_arraylist_class.htm).
+- **`Vector`:** Similar to `ArrayList` but synchronized. [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html).
+- **`String`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html).
+- **`StringBuilder`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html).
 
 ## Linked List
 
@@ -69,23 +70,24 @@ Data Type |       Description       | Default  |  Size
 ### Java
 
 - [Java Implementation of Linked List](1.1%20-%20Linked%20List.md)
-- [Oracle Docs - LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)
-- [TutorialsPoint - LinkedList](https://www.tutorialspoint.com/java/util/java_util_linkedlist.htm)
-- [TutorialsPoint - Iterator](https://www.tutorialspoint.com/java/java_using_iterator.htm)
-- [Oracle Docs - Stack](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)
-- [Oracle Docs - Queue](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html)
-- [Oracle Docs - Deque](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html)
+- [Java Implementation of Stack](1.2%20-%20Stack.md)
+- [Java Implementation of Queue](1.3%20-%20Queue.md)
+- **`LinkedList`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html), [TutorialsPoint](https://www.tutorialspoint.com/java/util/java_util_linkedlist.htm).
+- **`Iterator`:** [TutorialsPoint](https://www.tutorialspoint.com/java/java_using_iterator.htm).
+- **`Stack`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html).
+- **`Queue`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html).
+- **`Deque`:** [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html).
 
 ## Hash Table
 
 - Stores data as key-value pairs in a direct access table.
-- **Hash Functions** accept a key (from an arbitrarily sized dataset) and map it to an output i.e. hash code (from a fixed sized dataset). This hash code is then mapped to an index for storage.
-    - This is known as **hashing**, whose motivation is to assign a unique index to every possible key.
-    - This is done because the actual key space may be too large while only a fraction of those keys may appear.
+- Designed to optimize searching, insertion and deletion.
 
 ### Important Points
 
-- Designed to optimize searching, insertion and deletion.
+- **Hash Functions** accept a key (from an arbitrarily sized dataset) and map it to an output i.e. hash code (from a fixed sized dataset). This hash code is then mapped to an index for storage.
+    - This is known as **hashing**, whose motivation is to assign a unique index to every possible key.
+    - This is done because the actual key space may be too large while only a fraction of those keys may appear.
 - A good **hash function** must:
     - return a value within the hash table range.
     - achieve an even distribution of indices from the keys that actually occur.
@@ -98,7 +100,7 @@ Data Type |       Description       | Default  |  Size
         - **Linear Probing -** Insert the colliding record in the next slot recursively. However, this can result in long runs of occupied slots.
         - **Quadratic Probing/Double Hashing -** Use two hash functions to hash the key twice in case of a collision.
         - Using open address hashing requires a hash cell to be marked as *obsolete* when a record is deleted to avoid stopping search.
-- Hashes are important for associative arrays and database indexing.
+- Hashes are important for associative arrays (i.e. key-value pairs) and database indexing.
 
 ### Time Complexity
 
@@ -108,23 +110,12 @@ Data Type |       Description       | Default  |  Size
 
 ### Java
 
-- **`HashMap`:** `<K, V>`, no guarantee about iteration order, `O(1)`.
-- **`TreeMap`:** `<K, V>`, iteration according to natural order of keys or externally supplied `Comparator`, `O(log n)`.
-- **`LinkedHashMap`:** `<K, V>`, iteration according to insertion order, `O(1)`.
-- **`HashSet`:** `<T>`, no guarantee about iteration order, `O(1)`.
-- **`TreeSet`:** `<T>`, iteration according to natural order of keys or externally supplied `Comparator`, `O(log n)`.
-- **`LinkedHashSet`:** `<T>`, iteration according to insertion order, `O(1)`.
-
-#### Links
-
-- [TutorialsPoint - HashMap](https://www.tutorialspoint.com/java/java_hashmap_class.htm)
-- [Oracle Docs - HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
-- [Oracle Docs - TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html)
-- [Oracle Docs - LinkedHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)
-- [TutorialsPoint - HashSet](https://www.tutorialspoint.com/java/java_hashset_class.htm)
-- [Oracle Docs - HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)
-- [Oracle Docs - TreeSet](https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html)
-- [Oracle Docs - LinkedHashSet](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html)
+- **`HashMap`:** `<K, V>`, no guarantee about iteration order, `O(1)`. [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html), [TutorialsPoint](https://www.tutorialspoint.com/java/java_hashmap_class.htm).
+- **`TreeMap`:** `<K, V>`, iteration according to natural order of keys or externally supplied `Comparator`, `O(log n)`. [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html).
+- **`LinkedHashMap`:** `<K, V>`, iteration according to insertion order, `O(1)`. [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html).
+- **`HashSet`:** `<T>`, no guarantee about iteration order, `O(1)`. [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html), [TutorialsPoint](https://www.tutorialspoint.com/java/java_hashset_class.htm).
+- **`TreeSet`:** `<T>`, iteration according to natural order of keys or externally supplied `Comparator`, `O(log n)`. [Oracle Docs](https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html).
+- **`LinkedHashSet`:** `<T>`, iteration according to insertion order, `O(1)`. [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html).
 
 ## Tree
 
@@ -144,7 +135,7 @@ Data Type |       Description       | Default  |  Size
 - A **full binary tree** is one where every node has either zero or two children.
 - A **perfect binary tree** is one that is both full and complete. Perfect binary trees must have exactly `2^k - 1` nodes, where `k` is the number of levels.
 - A **degenerate tree** is an unbalanced tree, which if entirely one-sided is essentially a linked list.
-- Used to implement [**binary search trees**](1.2%20-%20Binary%20Search%20Tree.md) & [**binary heaps**](1.3%20-%20Binary%20Heap.md).
+- Used to implement [**binary search trees**](1.4%20-%20Binary%20Search%20Tree.md) & [**binary heaps**](1.5%20-%20Binary%20Heap.md).
 
 ## Trie (Prefix Tree)
 
@@ -162,7 +153,18 @@ Data Type |       Description       | Default  |  Size
 
 ### Java
 
-- [Java Implementation of Trie](1.4%20-%20Trie.md)
+- [Java Implementation of Trie](1.6%20-%20Trie.md)
+
+## Segment Tree
+
+- A segment tree is a tree data structure for storing intervals or segments.
+- It allows querying which of the stored segments contain a given element.
+- It is usually a static structure i.e. it cannot be modified easily once it's built.
+
+### Time Complexity
+
+- A segment tree for a set `I` of `n` intervals uses `O(n log n)` storage and can be built in `O(n log n)` time.
+- Segment trees support searching for all the intervals that contain a query point in `O(log n + k)`, `k` being the number of retrieved intervals or segments.
 
 ## Graph
 
@@ -188,6 +190,7 @@ Data Type |       Description       | Default  |  Size
 - A **path** is a sequence of edges that connect two nodes.
 - A **connected graph** is a graph where a path exists between any two nodes.
 - A **complete graph** is a graph where every vertex is directly connected to every other vertex.
+- A **clique** is a complete subgraph.
 - Traversal is similar to trees but vertices must be marked as visited (due to multiple possible paths) and all adjacent vertices must be visited (as opposed to just two in binary trees).
 
 ### Time Complexity
